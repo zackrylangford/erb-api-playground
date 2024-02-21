@@ -1,3 +1,7 @@
+# Use the local .env sample to add the api key and to specify the api route
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
