@@ -2,16 +2,19 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 
 export async function getServerSideProps(context: any) {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL + '/games'; // Construct the URL
-    const apiKey = process.env.NEXT_PUBLIC_API_KEY; // Retrieve the API key
+    // Keep the API URL public as it doesn't expose sensitive information
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL + '/games';
+    
+    // Change this to use the non-public version of your API key
+    const apiKey = process.env.API_KEY; // This will not be exposed to the client
 
   try {
     const res = await fetch(apiUrl, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'x-api-key': apiKey,
-        } as HeadersInit, // Cast headers object to type HeadersInit
+            'x-api-key': apiKey, // Use the server-side only API key here
+        } as HeadersInit, // Cast headers object to HeadersInit type
     });
 
     if (!res.ok) {
@@ -30,6 +33,7 @@ export async function getServerSideProps(context: any) {
     };
   }
 }
+
 const GamesPage = ({ games }: { games: any[] }) => {
     return (
       <div>
