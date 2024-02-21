@@ -1,0 +1,12 @@
+.navContainer {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 20px; /* Space between links */
+  }
+  
+  .navLink {
+    text-decoration: none; /* Optional: Removes underline from links */
+    color: inherit; /* Optional: Inherits color from parent */
+  }
+  
